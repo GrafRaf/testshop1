@@ -1,0 +1,16 @@
+<h2>Примерочная1</h2>
+<div ng-controller="FartukPreviewController" class="preview">
+  <div class="form-inline">
+    <div class="input-group col-lg-3 col-md-3 col-sm-6 col-xs-12"><span class="input-group-addon">Изображение</span>
+      <div multi-select="multi-select" input-model="images" button-label="Code" item-label="icon Code" tick-property="ticked" orientation="vertical" group-property="multiSelectGroup" selection-mode="single" max-labels="1" max-height="200px" on-close="selectImageClose()"></div>
+    </div>
+    <div class="input-group col-lg-6 col-md-6 col-sm-6 col-xs-12"><span class="input-group-addon">Материал фасадов</span>
+      <div multi-select="multi-select" input-model="materialsCategories" button-label="title" item-label="icon title" tick-property="ticked" orientation="vertical" group-property="multiSelectGroup" selection-mode="single" max-labels="1" max-height="200px" on-close="upClose()"></div>
+    </div>
+    <button ng-click="order()" ng-disabled="isOrderDisabled()" class="btn btn-success">Заказать</button>
+  </div>
+  <div class="test"><img src="https://fartuk.blob.core.windows.net/content/mesto_pod_fartuk_i_fasadi.png" class="test-layout"/>        
+    <div ng-style="{'background-color': topColor, 'background-image': bckgImgUrl }" style="background-color: rgb(35, 31, 31);background-size: 60px 60px;" class="test-top"></div>      <img ng-src="https://fartuk.blob.core.windows.net/previewcatalog/{{image.Code}}.jpg" class="test-middle"/>        
+    <div ng-style="{'background-color': bottomColor, 'background-image': bckgImgUrl, }" style="background-color: rgb(35, 31, 31);background-size: 60px 60px;" class="test-bottom"></div>
+  </div>
+</div>
