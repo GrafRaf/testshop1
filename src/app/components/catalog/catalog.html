@@ -1,0 +1,23 @@
+<h2>Каталог</h2>
+<div>
+  
+  <div class="row form-inline">
+    <div class="input-group col-lg-4 col-md-4 col-sm-12 col-xs-12">
+      <span class="input-group-addon">Категория</span>
+      <select id="category" ng-model="category"  class="form-control col-sm-12 col-md-6 col-lg-6">
+        <option *ng-for="#c of categories">{{c.Title}}</option>
+      </select>
+    </div>
+    <div class="input-group col-lg-6 col-md-6 col-sm-12 col-xs-12"><span class="input-group-addon">Изображение</span>
+      <input id="image" ng-mode="imageFilter" placeholder="фильтр по коду изображения, например 001" class="form-control"/>
+    </div>
+  </div>
+  <div class="row">
+    <div *ng-for="#img of category.Images" class="col-sm-4 col-md-3">
+      <span (click)="open('lg',img)" class="thumbnail">
+        <img src="https://fartuk.blob.core.windows.net/previewmincatalog/{{img.FileName}}" alt="..."/>
+      </span>
+    </div>
+  </div>
+  
+</div>
